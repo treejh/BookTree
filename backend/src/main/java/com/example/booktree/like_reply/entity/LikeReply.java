@@ -2,7 +2,6 @@ package com.example.booktree.like_reply.entity;
 
 
 import com.example.booktree.auditable.Auditable;
-import com.example.booktree.post.entity.Post;
 import com.example.booktree.reply.entity.Reply;
 import com.example.booktree.user.entity.User;
 import jakarta.persistence.Entity;
@@ -33,14 +32,13 @@ public class LikeReply extends Auditable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
+    // 좋아요가 어디 대댓글에 있는지 매핑
     @ManyToOne
     @JoinColumn(name = "reply_id")
     private Reply reply;
 
+    // 좋아요 누른 사용자
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
-
-
 }
