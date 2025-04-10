@@ -34,5 +34,5 @@ public class Role extends Auditable {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
     private RoleType role;
-
+    git fetch origin
 }
