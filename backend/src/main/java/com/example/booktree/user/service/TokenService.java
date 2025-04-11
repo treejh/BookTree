@@ -20,6 +20,7 @@ public class TokenService {
         if (StringUtils.hasText(authorization) && authorization.startsWith("Bearer ")) {
             return authorization.substring(7); // "Bearer " 뒤의 토큰 값 추출
         }
+
         return null;
     }
 
