@@ -4,14 +4,17 @@ import com.example.booktree.comment.dto.CommentDto;
 import com.example.booktree.comment.entity.Comment;
 import com.example.booktree.comment.repository.CommentRepository;
 import com.example.booktree.post.entity.Post;
-import com.example.booktree.post.repository.PostRepository;
+
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+
+import com.example.booktree.post.repository.PostRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
+//@RequiredArgsConstructor
 public class CommentService {
 
     private final CommentRepository commentRepository;

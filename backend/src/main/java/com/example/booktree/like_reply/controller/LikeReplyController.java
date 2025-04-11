@@ -8,21 +8,21 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/like-replies")
+@RequestMapping("/api/v1/like-replies")
 @AllArgsConstructor
 public class LikeReplyController {
 
     private final LikeReplyService likeReplyService;
 
-    // 대댓글 좋아요 생성 엔드포인트
-    @PostMapping
+    // 대댓글 좋아요 생성 엔드포인트 (POST /api/v1/like-replies/create)
+    @PostMapping("/create")
     public ResponseEntity<LikeReplyDto.Response> createLike(@RequestBody LikeReplyDto.Post dto) {
         LikeReplyDto.Response response = likeReplyService.createLike(dto);
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
-    // 대댓글 좋아요 삭제 엔드포인트
-    @DeleteMapping
+    // 대댓글 좋아요 삭제 엔드포인트 (DELETE /api/v1/like-replies/delete)
+    @DeleteMapping("/delete")
     public ResponseEntity<Void> deleteLike(@RequestParam Long replyId,
                                            @RequestParam Long userId) {
         likeReplyService.deleteLike(replyId, userId);
